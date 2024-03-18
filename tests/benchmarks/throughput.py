@@ -211,7 +211,7 @@ if __name__ == "__main__":
                         help="Path to the dataset.")
     parser.add_argument("--model",
                         type=str,
-                        default="EleutherAI/pythia-70m-deduped")
+                        default="TheBloke/zephyr-7B-beta-GGUF")
     parser.add_argument("--tokenizer", type=str, default=None)
     parser.add_argument(
         "--quantization",
