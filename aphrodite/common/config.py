@@ -142,11 +142,11 @@ class ModelConfig:
                 f"Supported load format are "
                 f"{rocm_supported_load_format}")
 
-        logger.info(f'hf_config: {self.hf_config}')
+        logger.warning(f'hf_config: {self.hf_config}')
 
         # TODO: Remove this check once HF updates the pt weights of Mixtral.
         architectures = getattr(self.hf_config, "architectures", [])
-        logger.info(f"architectures: {architectures}")
+        logger.warning(f"architectures: {architectures}")
         if "MixtralForCausalLM" in architectures and load_format == "pt":
             raise ValueError(
                 "Currently, the 'pt' format is not supported for Mixtral. "
