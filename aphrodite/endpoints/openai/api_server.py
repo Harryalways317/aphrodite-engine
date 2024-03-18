@@ -595,6 +595,8 @@ if __name__ == "__main__":
     else:
         served_model = args.model
 
+    logger.debug(f"Using model which is {args.served_model_name}: {served_model}")
+
     engine_args = AsyncEngineArgs.from_cli_args(args)
     engine = AsyncAphrodite.from_engine_args(engine_args)
     tokenizer = get_tokenizer(
