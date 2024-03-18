@@ -22,8 +22,9 @@ RUN python3 -m pip install --no-cache-dir --upgrade pip
 #    && rm -fr /tmp/aphrodite-engine \
 #    && chmod +x docker/entrypoint.sh
 
-COPY . .
 
+COPY . .
+RUN cat $pwd
 RUN chmod +x docker/entrypoint.sh
 
 # Export the CUDA_HOME variable correctly
@@ -34,7 +35,7 @@ ENV NUMBA_CACHE_DIR=$HF_HOME/numba_cache
 ENV TORCH_CUDA_ARCH_LIST="6.1 7.0 7.5 8.0 8.6 8.9 9.0+PTX"
 RUN python3 -m pip install --no-cache-dir -e .
 
-RUN cat $pwd
+
 
 # Entrypoint exec form doesn't do variable substitution automatically ($HOME)
 ENTRYPOINT ["/app/aphrodite-engine/docker/entrypoint.sh"]
