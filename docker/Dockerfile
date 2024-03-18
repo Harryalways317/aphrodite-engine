@@ -17,10 +17,10 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 
 RUN python3 -m pip install --no-cache-dir --upgrade pip
 
-RUN git clone https://github.com/PygmalionAI/aphrodite-engine.git /tmp/aphrodite-engine \
-    && mv /tmp/aphrodite-engine/* . \
-    && rm -fr /tmp/aphrodite-engine \
-    && chmod +x docker/entrypoint.sh
+#RUN git clone https://github.com/PygmalionAI/aphrodite-engine.git /tmp/aphrodite-engine \
+#    && mv /tmp/aphrodite-engine/* . \
+#    && rm -fr /tmp/aphrodite-engine \
+#    && chmod +x docker/entrypoint.sh
 
 # Export the CUDA_HOME variable correctly
 ENV CUDA_HOME=/usr/local/cuda
