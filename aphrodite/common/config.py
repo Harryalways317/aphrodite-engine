@@ -147,6 +147,7 @@ class ModelConfig:
         # TODO: Remove this check once HF updates the pt weights of Mixtral.
         architectures = getattr(self.hf_config, "architectures", [])
         logger.warning(f"architectures: {architectures}")
+        logger.warning(f'load_format: {load_format} is not supported for Mixtral. Using safetensors instead.')
         if "MixtralForCausalLM" in architectures and load_format == "pt":
             raise ValueError(
                 "Currently, the 'pt' format is not supported for Mixtral. "
