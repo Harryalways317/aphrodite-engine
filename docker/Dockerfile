@@ -22,6 +22,10 @@ RUN python3 -m pip install --no-cache-dir --upgrade pip
 #    && rm -fr /tmp/aphrodite-engine \
 #    && chmod +x docker/entrypoint.sh
 
+COPY . .
+
+RUN chmod +x docker/entrypoint.sh
+
 # Export the CUDA_HOME variable correctly
 ENV CUDA_HOME=/usr/local/cuda
 
