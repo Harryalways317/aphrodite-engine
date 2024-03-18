@@ -67,7 +67,7 @@ class EngineArgs:
         parser.add_argument(
             '--model',
             type=str,
-            default='EleutherAI/pythia-70m-deduped',
+            default='TheBloke/zephyr-7B-beta-GGUF',
             help='name or path of the huggingface model to use')
         parser.add_argument(
             '--tokenizer',
